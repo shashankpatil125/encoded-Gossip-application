@@ -5,9 +5,9 @@ import Navbar from '../components/Navbar.js'
 
 function Chats() {
   return (
-    <div className="">
-        <Navbar/>
-        <div className='flex'>
+    <div className="h-full">
+        <Navbar />
+        <div className='flex pt-16 h-screen'>
         <Chatlist/>
         <Chatwindow/>
         </div>

@@ -4,7 +4,10 @@ import Chatchannel from './Chatchannel'
 function Chatlist() {
   return (
     <div >
-        <div className='bg-slate-500 w-96 h-4/4 '>
+
+
+      
+        {/* <div className='bg-slate-500 w-96  overflow-scroll'>
             <Chatchannel/>
             <Chatchannel/>
             <Chatchannel/>
@@ -14,7 +17,7 @@ function Chatlist() {
             <Chatchannel/>
             <Chatchannel/>
             <Chatchannel/>
-        </div>
+        </div> */}
     </div>
   )
 }

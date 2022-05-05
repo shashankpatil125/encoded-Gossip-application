@@ -2,7 +2,7 @@ import React from 'react'
 
 function Navbar() {
   return (
-    <div className='h-16  bg-slate-700'>
+    <div className='h-16  bg-slate-700 fixed w-full'>
       <div className='flex'>
       <img src='https://blog.cpanel.com/wp-content/uploads/2019/08/user-01.png' className='h-14 w-14 mt-1 ml-10 mr-8'></img>
         <p className=' flex-1 text-3xl text-white pt-2'>Name</p>

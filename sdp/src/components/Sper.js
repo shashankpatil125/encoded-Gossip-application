@@ -2,7 +2,8 @@ import React from 'react'
 
 function Sper() {
   return (
-    <div className='border-2 w-80 ml-8 mt-4 rounded-lg float-right mr-8'>
+    <div className='w-full'>
+    <div className='border-2 w-80 ml-8 mt-4 rounded-lg float-right mr-8 flex-1'>
         <div className='divide-y'>
             <p className='p-3 text-xl'>Message</p>
             <div>
@@ -11,6 +12,7 @@ function Sper() {
             </div>
             
         </div>
+    </div>
     </div>
   )
 }
