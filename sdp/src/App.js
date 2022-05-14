@@ -16,14 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SignIn />} />
-        <Route path="YourChats" element={
-          <div>
-            <Navbar />
-            <div className='flex pt-16 h-screen'>
-              <Chatlist />
-              <Chatwindow />
-            </div>
-          </div>} />
+        <Route path="YourChats" element={<Chats/>} />
       </Routes>
     </BrowserRouter>
 

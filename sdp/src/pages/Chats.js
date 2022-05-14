@@ -7,20 +7,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 function Chats() {
   return (
 
-    <Routes>
-      <Route path="YourChats" element={
-        <div className="h-full">
-          <Navbar />
-          <div className='flex pt-16 h-screen'>
-            <Chatlist />
-            <Chatwindow />
-          </div>
-        </div>} />
-    </Routes>
-
-
-
-
+    <div className="h-full">
+      <Navbar />
+      <div className='flex pt-16 h-screen'>
+        <Chatlist />
+        <Chatwindow />
+      </div>
+    </div>
   )
 }
 
