@@ -1,5 +1,6 @@
 import React from 'react'
 import ChatChannelName from './ChatChannelName';
+import ChatFP from './ChatFP';
 import Mainalgo from './Mainalgo';
 function Chatwindow() {
 
@@ -73,15 +74,7 @@ function Chatwindow() {
 
                 <div className='pt-28 w-full h-full overflow-scroll'>
                     {/* chat fperson */}
-                    <div className='w-80 mx-16 h-fit text-center text-2xl border-2 rounded-2xl'>
-                        {/* <p className=' p-4'>hello helo helo helo hsgef hsegf sdf skjefhksj efaf hafka fkaf ahgfka fkagfkajgf kaf efgagf kjaf aef ajegf</p> */}
-                        <p className=' p-4'>{msg}</p>
-                        <div className='flex'>
-                            <input type="password" className='border-2 w-36 my-3 mx-4' placeholder='Enter Key'></input>
-                            {/* <button className='rounded-lg bg-lime-600 h-12 px-3 mt-1'>Decript</button> */}
-                            <button className='rounded-lg bg-lime-600 h-12 px-3 mt-1' onClick={msg=Mainalgo(msg,2)}>Decript</button>
-                        </div>
-                    </div>
+                    <ChatFP/>
 
                     {/* chat sperson */}
                     <div className='flex justify-end'>
