@@ -1,5 +1,5 @@
 import React from 'react'
-import Chatchannel from './Chatchannel'
+import Chatchannel from '../useless/Chatchannel'
 
 function Chatlist() {
   return (
