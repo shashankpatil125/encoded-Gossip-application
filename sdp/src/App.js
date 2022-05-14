@@ -27,22 +27,6 @@ function App() {
       </Routes>
     </BrowserRouter>
 
-
-
-    // <div className="App">
-    //   <SignIn/>
-    //   {/* <Chats/> */}
-
-    //   {/* <BrowserRouter>
-    //     <Routes>
-    //       <Route path='SignIn' element={<SignIn/>}/>
-    //       <Route path='Chat' element={<Chats/>}>
-
-
-    //       </Route>
-    //     </Routes>
-    //   </BrowserRouter> */}
-    // </div>
   );
 }
 
