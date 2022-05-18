@@ -4,19 +4,13 @@ let flag = false;
 function ChatFP() {
 
     // set button name
-    const [buttonName, setbuttonName] = useState("Encrypt")
+    const [buttonName, setbuttonName] = useState("Decrypt")
 
     //about key
-    // const [key, setKey] = useState();
     let key
-    // setKey(0)
     function keyOnChange(event) {
         key = event.target.value;
-        
-        console.log(key);
-        // setKey(value)
         // console.log(key);
-
     }
 
 
@@ -99,23 +93,25 @@ function ChatFP() {
         if (flag == true) {
             encode(g, key);
             flag = false
-            setbuttonName("Encrypt")
+            setbuttonName("Decrypt")
         }
         else if (flag == false) {
             decode(g, key);
             flag = true
-            setbuttonName("Decrypt")
+            setbuttonName("Encrypt")
         }
         setg(s)
         // console.log(chengedg)
     }
 
     return (
-        <div className='w-80 mx-16 h-fit text-center text-2xl border-2 rounded-2xl'>
-            <p className=' p-4'>{g}</p>
-            <div className='flex'>
-                <input type="number" className='border-2 w-36 my-3 mx-4' placeholder='Enter Key' value={key} onChange={keyOnChange}></input>
-                <button className='rounded-lg bg-lime-600 h-12 px-3 mt-1' onClick={dec}>{buttonName}</button>
+        <div className='w-full'>
+            <div className='w-80 mx-16 h-fit text-center text-2xl border-2 rounded-2xl'>
+                <p className=' p-4'>{g}</p>
+                <div className='flex'>
+                    <input type="number" className='border-2 w-36 my-3 mx-4' placeholder='Enter Key' value={key} onChange={keyOnChange}></input>
+                    <button className='rounded-lg bg-lime-600 h-12 px-3 mt-1' onClick={dec}>{buttonName}</button>
+                </div>
             </div>
         </div>
     )
