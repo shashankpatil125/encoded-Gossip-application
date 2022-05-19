@@ -7,11 +7,11 @@ import ChatSP from './ChatSP';
 
 let counter=0
 let key
-function Chatwindow() {
+function Cw() {
 
     // encode typed message
     let s
-    function encode(typedMessage, key) {
+    function encode(g, key) {
         s = "";
         let chenged = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
         for (let j = 0; j < key; j++) {
@@ -25,17 +25,45 @@ function Chatwindow() {
 
         let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-        for (let i = 0; i < typedMessage.length; i++) {
+        for (let i = 0; i < g.length; i++) {
             for (let j = 0; j < 26; j++) {
-                if (typedMessage.charAt(i) == " ") {
+                if (g.charAt(i) == " ") {
                     s = s.concat(" ");
                 }
-                else if (typedMessage.charAt(i) == alphabet[j]) {
+                else if (g.charAt(i) == alphabet[j]) {
                     s = s.concat(chenged[j]);
                 }
             }
         }
-        return s
+
+        // console.log(g);
+        // console.log(s);
+    }
+
+    function decode(g, key) {
+        s = "";
+        let chenged = ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p", "o", "n", "m", "l", "k", "j", "i", "h", "g", "f", "e", "d", "c", "b", "a"];
+        for (let j = 0; j < key; j++) {
+            for (let i = 0; i < 25; i++) {
+
+                let temp = chenged[i];
+                chenged[i] = chenged[i + 1]
+                chenged[i + 1] = temp;
+            }
+        }
+
+        let alphabet = ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p", "o", "n", "m", "l", "k", "j", "i", "h", "g", "f", "e", "d", "c", "b", "a"];
+
+        for (let i = 0; i < g.length; i++) {
+            for (let j = 0; j < 26; j++) {
+                if (g.charAt(i) == " ") {
+                    s = s.concat(" ");
+                }
+                else if (g.charAt(i) == alphabet[j]) {
+                    s = s.concat(chenged[j]);
+                }
+            }
+        }
 
         // console.log(g);
         // console.log(s);
@@ -49,13 +77,12 @@ function Chatwindow() {
     function send(){
        let carr=arr.slice()
         //encode message
-        settypedMessage(encode(typedMessage,key))
-        carr[counter]=encode(typedMessage,key)
+        settypedMessage(decode(typedMessage,2))
+        carr[counter]=typedMessage
         setarr(carr)
-        console.log(carr[counter]);
+        console.log(carr);
         console.log(counter++);
         settypedMessage('')
-        console.log(encode(typedMessage,key));
 
 
 
@@ -124,4 +151,4 @@ function Chatwindow() {
     )
 }
 
-export default Chatwindow
+export default Cw

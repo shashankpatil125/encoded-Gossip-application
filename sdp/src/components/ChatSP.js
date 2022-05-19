@@ -9,7 +9,7 @@ function ChatSP(props) {
                     <p className=' p-4'>{props.msg}</p>
                     <div className='flex'>
                         <input type="password" className='border-2 w-36 my-3 mx-4' placeholder='Enter Key'></input>
-                        <button className='rounded-lg bg-lime-600 h-12 px-3 mt-1'>Decript</button>
+                        <button className='rounded-lg bg-lime-600 h-12 px-3 mt-1'>Decrypt</button>
                     </div>
                 </div>
             </div>
