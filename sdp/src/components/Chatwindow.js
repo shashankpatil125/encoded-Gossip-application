@@ -6,9 +6,8 @@ import ChatSP from './ChatSP';
 
 
 let counter=0
-let key
 function Chatwindow() {
-
+    
     // encode typed message
     let s
     function encode(typedMessage, key) {
@@ -22,9 +21,9 @@ function Chatwindow() {
                 chenged[i + 1] = temp;
             }
         }
-
+        
         let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
+        
         for (let i = 0; i < typedMessage.length; i++) {
             for (let j = 0; j < 26; j++) {
                 if (typedMessage.charAt(i) == " ") {
@@ -36,18 +35,44 @@ function Chatwindow() {
             }
         }
         return s
-
-        // console.log(g);
-        // console.log(s);
     }
     // encode typed message 
 
 
+    // function for Decode the message
+    function decode(g, key) {
+        s = "";
+        let chenged = ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p", "o", "n", "m", "l", "k", "j", "i", "h", "g", "f", "e", "d", "c", "b", "a"];
+        for (let j = 0; j < key; j++) {
+            for (let i = 0; i < 25; i++) {
+
+                let temp = chenged[i];
+                chenged[i] = chenged[i + 1]
+                chenged[i + 1] = temp;
+            }
+        }
+        
+        let alphabet = ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p", "o", "n", "m", "l", "k", "j", "i", "h", "g", "f", "e", "d", "c", "b", "a"];
+        for (let i = 0; i < g.length; i++) {
+            for (let j = 0; j < 26; j++) {
+                if (g.charAt(i) == " ") {
+                    s = s.concat(" ");
+                }
+                else if (g.charAt(i) == alphabet[j]) {
+                    s = s.concat(chenged[j]);
+                }
+            }
+        }
+    }
+    // function for Decode the message
+    
+    
+    
     const [arr,setarr]=useState([])
-{/* <TypeMessage/> */}
+    {/* <TypeMessage/> */}
     const [typedMessage, settypedMessage] = useState('');
     function send(){
-       let carr=arr.slice()
+        let carr=arr.slice()
         //encode message
         settypedMessage(encode(typedMessage,key))
         carr[counter]=encode(typedMessage,key)
@@ -55,16 +80,15 @@ function Chatwindow() {
         console.log(carr[counter]);
         console.log(counter++);
         settypedMessage('')
-        console.log(encode(typedMessage,key));
-
-
-
+        setkey('')
+        console.log(encode(typedMessage,key));  
     }
     //store a typed message into array which is arr
     
+    const [key,setkey]=useState('')
     function keyOnChange(e) {
-        key = e.target.value;
-        console.log(key);
+        setkey(e.target.value);
+        // console.log(key);
     }
     //store a typed KEY into key 
     
@@ -105,7 +129,7 @@ function Chatwindow() {
                     <ChatFP />
 
                     {/* chat sperson */}
-                    {arr.map(e=><ChatSP msg={e} />)}
+                    {arr.map((e,i)=><ChatSP msg={e} key={i} />)}
                     
                     
 
