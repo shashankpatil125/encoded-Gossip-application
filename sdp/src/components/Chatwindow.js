@@ -77,11 +77,11 @@ function Chatwindow() {
         settypedMessage(encode(typedMessage,key))
         carr[counter]=encode(typedMessage,key)
         setarr(carr)
-        console.log(carr[counter]);
-        console.log(counter++);
+        // console.log(carr[counter]);
+        // console.log(counter++);
         settypedMessage('')
         setkey('')
-        console.log(encode(typedMessage,key));  
+        // console.log(encode(typedMessage,key));  
     }
     //store a typed message into array which is arr
     
@@ -98,24 +98,6 @@ function Chatwindow() {
     return (
 
         <div className='flex  w-full '>
-            <div className='flex-1  bg-slate-200  '>
-                <div className='  w-96 overflow-scroll h-full'>
-                    <ChatChannelName />
-                    <ChatChannelName />
-                    <ChatChannelName />
-                    <ChatChannelName />
-                    <ChatChannelName />
-                    <ChatChannelName />
-                    <ChatChannelName />
-                    <ChatChannelName />
-                    <ChatChannelName />
-                    <ChatChannelName />
-                    <ChatChannelName />
-                </div>
-            </div>
-
-
-
             <div className='w-full h-full'>
                 <div className='bg-sky-200 w-full h-fit fixed'>
                     <div className='flex  bg-sky-200 '>
@@ -124,7 +106,7 @@ function Chatwindow() {
                     </div>
                 </div>
 
-                <div className='pt-28 w-full h-full overflow-scroll'>
+                <div className='pt-28 w-full h-3/4 overflow-scroll '>
                     {/* chat fperson */}
                     <ChatFP />
 
@@ -135,7 +117,7 @@ function Chatwindow() {
 
                     {/* type new message and send it */}
                     {/* <TypeMessage/> */}
-                    <div className='flex w-full bg-sky-200 mt-4 '>
+                    <div className='flex  bg-sky-200 mt-4 absolute top-3/4 pr-56   '>
                         {/* <input className='mt-6 ml-8 mb-5 border-2 border-black p-2 rounded-full w-80' type="text" placeholder='Type a message'></input> */}
                         <input className='mt-6 ml-8 mb-5 border-2 border-black p-2 rounded-full w-80' value={typedMessage} name="typedMessage" onChange={e => settypedMessage(e.target.value)} placeholder="Type a message" />
                         <input className='mt-6 ml-8 mb-5 border-2 border-black p-2 rounded-full text-center w-28' type="text" placeholder='Enter key'  value={key} onChange={keyOnChange} ></input>
