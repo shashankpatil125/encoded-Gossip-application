@@ -5,9 +5,14 @@ import ChatFP from './ChatFP';
 import ChatSP from './ChatSP';
 
 
+
+function useQuery(){
+    const {search} = useLocation();
+    return React.useMemo(()=>new URLSearchParams(search), [search]);
+}
 let counter=0
 function Chatwindow() {
-    
+    let query = useQuery();
     // encode typed message
     let s
     function encode(typedMessage, key) {
@@ -93,7 +98,7 @@ function Chatwindow() {
     //store a typed KEY into key 
     
 {/* <TypeMessage/> */}
-
+// console.log('max ',query.get("name"));
 
     return (
 
@@ -102,7 +107,8 @@ function Chatwindow() {
                 <div className='bg-sky-200 w-full h-fit fixed'>
                     <div className='flex  bg-sky-200 '>
                         <img src='https://blog.cpanel.com/wp-content/uploads/2019/08/user-01.png' className='h-14 w-14 m-4'></img>
-                        <p className='text-2xl mt-7 font-semibold'>Name</p>
+                        <p className='text-2xl mt-7 font-semibold'>{query.get("name")}</p>
+                        
                     </div>
                 </div>
 

@@ -10,8 +10,13 @@ import Chats from './pages/Chats';
 import SignIn from './pages/SignIn';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+// import Cw1 from './components/Cw1';
+import Cwlist from './CW/Cwlist';
+import { useState } from 'react';
+
 
 function App() {
+  const [myname, setmyname]=useState('')
   return (
     <BrowserRouter>
       <Routes>
@@ -19,6 +24,8 @@ function App() {
         <Route path="YourChats" element={<Chats/>} />
       </Routes>
     </BrowserRouter>
+
+    // <Cwlist/>
 
   );
 }

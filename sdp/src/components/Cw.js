@@ -2,10 +2,18 @@ import React, { useState } from 'react'
 import ChatChannelName from './ChatChannelName';
 import ChatFP from './ChatFP';
 import ChatSP from './ChatSP';
+import {useLocation} from 'react-router-dom'
 
+
+
+function useQuery(){
+    const {search} = useLocation();
+    return React.useMemo(()=>new URLSearchParams(search), [search]);
+}
 
 let counter=0
 function Chatwindow() {
+    let query = useQuery();
 
 
     const [allinfo,setallinfo]=useState([])
@@ -42,32 +50,6 @@ function Chatwindow() {
     // encode typed message 
 
 
-    // function for Decode the message
-    // function decode(g, key) {
-    //     s = "";
-    //     let chenged = ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p", "o", "n", "m", "l", "k", "j", "i", "h", "g", "f", "e", "d", "c", "b", "a"];
-    //     for (let j = 0; j < key; j++) {
-    //         for (let i = 0; i < 25; i++) {
-
-    //             let temp = chenged[i];
-    //             chenged[i] = chenged[i + 1]
-    //             chenged[i + 1] = temp;
-    //         }
-    //     }
-        
-    //     let alphabet = ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p", "o", "n", "m", "l", "k", "j", "i", "h", "g", "f", "e", "d", "c", "b", "a"];
-    //     for (let i = 0; i < g.length; i++) {
-    //         for (let j = 0; j < 26; j++) {
-    //             if (g.charAt(i) === " ") {
-    //                 s = s.concat(" ");
-    //             }
-    //             else if (g.charAt(i) === alphabet[j]) {
-    //                 s = s.concat(chenged[j]);
-    //             }
-    //         }
-    //     }
-    // }
-    // // function for Decode the message
     
     
     
@@ -83,7 +65,7 @@ function Chatwindow() {
         settypedMessage('')
         setkey('')
         let infocpy=allinfo.slice()  
-        infocpy.push({wtypedMessage:typedMessage,
+        infocpy.push({wtypedMessage:encode(typedMessage,key),
         fpersonName:"maxperson",
         spersonName:"minperson"})
         setallinfo(infocpy)
@@ -95,7 +77,6 @@ function Chatwindow() {
     const [key,setkey]=useState('')
     function keyOnChange(e) {
         setkey(e.target.value);
-        // console.log(key);
     }
     //store a typed KEY into key 
     
@@ -105,15 +86,11 @@ function Chatwindow() {
     return (
 
         <div className='flex  w-full '>
-            
-
-
-
             <div className='w-full h-full'>
                 <div className='bg-sky-200 w-full h-fit fixed'>
                     <div className='flex  bg-sky-200 '>
                         <img src='https://blog.cpanel.com/wp-content/uploads/2019/08/user-01.png' alt="img" className='h-14 w-14 m-4'></img>
-                        <p className='text-2xl mt-7 font-semibold'>Name</p>
+                        <p className='text-2xl mt-7 font-semibold'>{query.get("name")}</p>
                     </div>
                 </div>
 
