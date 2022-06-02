@@ -5,13 +5,7 @@ import axios from 'axios'
 import SetMyName from '../functions/SetMyName';
 import { useLocation } from "react-router-dom"
 
-
-
-
 function SignIn() {
-
-
-
 
   const [myname, settypedname] = useState('');
   let value;
@@ -59,8 +53,6 @@ function SignIn() {
         <br />
         {/* <button className='border-2' >Start Your Gossip</button> */}
         <Link to={'/YourChats?myname=' + myname} className="border-2 px-10 mb-16 py-2 rounded-full bg-cyan-600 text-slate-300 hover:text-zinc-900 hover:bg-white transition-transform">Start Your Gossip</Link>
-
-
       </div>
     </div>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 let flag = false;
-function ChatFP() {
+function ChatFP(props) {
 
     // set button name
     const [buttonName, setbuttonName] = useState("Decrypt")
@@ -10,7 +10,6 @@ function ChatFP() {
     let key
     function keyOnChange(event) {
         key = event.target.value;
-        // console.log(key);
     }
 
 
@@ -42,9 +41,6 @@ function ChatFP() {
                 }
             }
         }
-
-        // console.log(g);
-        // console.log(s);
     }
 
     // function for Decode the message
@@ -85,7 +81,7 @@ function ChatFP() {
 
 
     // let msg="abc xyz I am react developer i like to develope inovative things and secured things "; 
-    const [g, setg] = useState("cde zab a co tgcev fgxgnqrgt k nkmg vq fgxgnqrg kpqxcvkxg vjkpiu cpf ugewtgf vjkpiu");
+    const [g, setg] = useState(props.fpMessage);
     // const [chengedg, setchangedg] = useState(encode(gi, 2));
 
     // onlick function which decide which function being execute 
