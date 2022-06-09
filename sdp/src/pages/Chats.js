@@ -14,12 +14,12 @@ function useQuery(){
 }
 
 
-let arr=["om", "shiddhu","pappya","maxman", "ultraMaxMan", "megaMan","spiderman", "alibaba", "uvxyz" ]
+let arr=["om", "shiddhesh","pranav","shubham", "aaditya", "sahil","mayur", "mayuresh", "rayyan" ]
 
 
 function Chats() {
   let query = useQuery();
-  const [nameAndMessage, setnameAndMessage]= useState([{name:"om",message:[{send:"hi"},{rec:"bye"}]},
+  const [nameAndMessage, setnameAndMessage]= useState([{name:"om",message:[{send:"Hello"},{rec:"bye"},{send:"how are you"},{send:"whats going on"},{rec:"i am fine"},{rec:"exams going on"}]},
   {name:"shiddhu",message:[{send:"hi"},{rec:"bye"}]},
   {name:"pappya",message:[{send:"helo"},{rec:"bye"}]},
   {name:"maxman",message:[{send:"hi"},{rec:"bye"}]},
