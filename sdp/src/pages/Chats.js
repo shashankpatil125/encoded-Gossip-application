@@ -19,14 +19,14 @@ let arr=["om", "shiddhesh","pranav","shubham", "aaditya", "sahil","mayur", "mayu
 
 function Chats() {
   let query = useQuery();
-  const [nameAndMessage, setnameAndMessage]= useState([{name:"om",message:[{send:"Hello"},{rec:"bye"},{send:"how are you"},{send:"whats going on"},{rec:"i am fine"},{rec:"exams going on"}]},
-  {name:"shiddhu",message:[{send:"hi"},{rec:"bye"}]},
-  {name:"pappya",message:[{send:"helo"},{rec:"bye"}]},
-  {name:"maxman",message:[{send:"hi"},{rec:"bye"}]},
-  {name:"ultraMaxMan",message:[{send:"hi"},{rec:"bye"}]},
-  {name:"megaMan",message:[{send:"hi"},{rec:"bye"}]},
-  {name:"spiderman",message:[{send:"hi"},{rec:"bye"}]},
-  {name:"alibaba",message:[{send:"hi"},{rec:"bye"}]}])
+  const [nameAndMessage, setnameAndMessage]= useState([{name:"om",message:[{send:"Hello"},{rec:"bye"},{send:"how are you"},{send:"whats going on"},{rec:"i am fine"},{rec:"exams are going on"}]},
+  {name:"Pranav",message:[{send:"Hi"},{rec:"Hello"},{send:"My self Pranav"},{rec:"okk "},{send:"how your project is going on"},{rec:"it will going very interesting"}]},
+  {name:"Siddhesh",message:[{send:"hello"},{rec:"hello"},{send:"can you send your email and password"},{rec:"yes"},{rec:"it is secured so i can shared it"}]},
+  {name:"Neel",message:[{send:"Shashank right?"},{rec:"Yes, thats me!"}]},
+  {name:"Sahil",message:[{send:"hi"},{rec:"bye"}]},
+  {name:"Mayur",message:[{send:"Can you come at collage for help me to planning for event"},{rec:"yes i will come in 10 minutes"}]},
+  {name:"Jeet",message:[{send:"I am jeet i want to secure the chats"},{rec:"yes you can securied your chat by using cipher texts technology"}]},
+  {name:"Suraj",message:[{send:"Hi"},{rec:"Hello"},{rec:"I will talk you after some time"}]}])
   
 
   return (

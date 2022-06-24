@@ -131,7 +131,7 @@ function Chatwindow(props) {
                         {/* <input className='mt-6 ml-8 mb-5 border-2 border-black p-2 rounded-full w-80' type="text" placeholder='Type a message'></input> */}
                         <input className='mt-6 ml-8 mb-5 border-2 border-black p-2 rounded-full w-80' value={typedMessage} name="typedMessage" onChange={e => settypedMessage(e.target.value)} placeholder="Type a message" />
                         <input className='mt-6 ml-8 mb-5 border-2 border-black p-2 rounded-full text-center w-28' type="text" placeholder='Enter key' value={key} onChange={keyOnChange} ></input>
-                        <button className='border-2 mt-6 ml-8 mb-5 border-black rounded-xl px-3 bg-lime-300' onClick={send}>Encrypt and Send</button>
+                        <button className='border-2 mt-6 ml-8 mb-5 border-black rounded-xl px-3 bg-amber-300' onClick={send}>Encrypt and Send</button>
                     </div>
                     {/* <TypeMessage/> */}
                 </div>

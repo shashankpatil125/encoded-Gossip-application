@@ -89,12 +89,12 @@ function ChatSP(props) {
 
     return (
             {/* type new message and send it */},
-            <div className='flex justify-end mt-2'>
-                <div className='w-80 mx-16 h-fit text-center text-2xl border-2 rounded-2xl justify-end'>
+            <div className='flex justify-end mt-2 '>
+                <div className='bg-orange-100  w-80 mx-16 h-fit text-center text-2xl  rounded-2xl justify-end'>
                     <p className=' p-4'>{message}</p>
                     <div className='flex'>
-                        <input type="password" className='border-2 w-36 my-3 mx-4' placeholder='Enter key'  value={key} onChange={keyOnChange}></input>
-                        <button className='rounded-lg bg-lime-600 h-12 px-3 mt-1' onClick={dec}>{buttonName}</button>
+                        <input type="password" className='pb-2 w-36 my-3 mx-4' placeholder='Enter key'  value={key} onChange={keyOnChange}></input>
+                        <button className='rounded-lg bg-lime-500 h-12 px-3 mt-1' onClick={dec}>{buttonName}</button>
                     </div>
                 </div>
             </div>

@@ -43,9 +43,9 @@ function SignIn() {
   return (
     
     <div className="text-center my-20 h-fit">
-      <div className=" h-fit border-2 border-slate-600 rounded-lg w-80 inline-block align-middle bg-white hover:shadow-2xl">
-        <h1 className="text-center text-3xl">Welcome to landing page</h1>
-        <button className="border-2 px-10 py-2 rounded-full bg-red-700 text-slate-300 hover:text-zinc-900 hover:bg-white transition-transform hover:shadow-2xl" onClick={signInWithGoogle}>Sign In With Google</button>
+      <div className=" h-fit border-2 border-slate-600 rounded-lg w-80 inline-block align-middle bg-white hover:shadow-2xl pb-10">
+        <h1 className="text-center text-3xl mb-5">Welcome to landing page</h1>
+        <button className="border-2 px-10 py-2 rounded-full mb-4 bg-red-700 text-slate-300 hover:text-zinc-900 hover:bg-white transition-transform hover:shadow-2xl" onClick={signInWithGoogle}>Sign In With Google</button>
         <br />
         <input className="border-2 px-10 py-2 rounded-full bg-sky-300 text-white text-slate-300 hover:text-zinc-900 hover:bg-white transition-transform hover:shadow-2xl" type="text" placeholder='Enter Name' name="name" value={myname} onChange={e => settypedname(e.target.value)}></input>
         <br />
