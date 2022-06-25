@@ -3,20 +3,8 @@ import React, { useState } from 'react'
 let flag = false;
 function ChatFP(props) {
 
+    let s="";
     // set button name
-    const [buttonName, setbuttonName] = useState("Decrypt")
-
-    //about key
-    let key
-    function keyOnChange(event) {
-        key = event.target.value;
-    }
-
-
-
-
-    // function for encode the message
-    let s
     function encode(g, key) {
         s = "";
         let chenged = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -43,7 +31,9 @@ function ChatFP(props) {
         }
     }
 
+    
     // function for Decode the message
+    
     function decode(g, key) {
         s = "";
         let chenged = ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p", "o", "n", "m", "l", "k", "j", "i", "h", "g", "f", "e", "d", "c", "b", "a"];
@@ -67,49 +57,45 @@ function ChatFP(props) {
                     s = s.concat(chenged[j]);
                 }
             }
-        }
-
-        // console.log(g);
-        // console.log(s);
+        } 
     }
 
+    const [key,setkey]=useState('')
+    function keyOnChange(e) {
+        setkey(e.target.value);
+        // console.log(key);
+    }
 
-
-
-
-
-
-
-    // let msg="abc xyz I am react developer i like to develope inovative things and secured things "; 
-    const [g, setg] = useState(props.fpMessage);
-    // const [chengedg, setchangedg] = useState(encode(gi, 2));
-
-    // onlick function which decide which function being execute 
+    const [message,setmessage]=useState(props.fpMessage)
+    // set button name
+    const [buttonName, setbuttonName] = useState("Decrypt")
+    
     function dec() {
         if (flag == true) {
-            encode(g, key);
+            encode(message, key);
             flag = false
             setbuttonName("Decrypt")
         }
         else if (flag == false) {
-            decode(g, key);
+            decode(message, key);
             flag = true
             setbuttonName("Encrypt")
         }
-        setg(s)
+        setmessage(s)
         // console.log(chengedg)
     }
 
     return (
-        <div className='w-full mt-2'>
-            <div className='bg-orange-100 w-80 mx-16 h-fit text-center text-2xl rounded-2xl'>
-                <p className=' p-4'>{g}</p>
-                <div className='flex'>
-                    <input type="number" className='pb-2 w-36 my-3 mx-4 ' placeholder='Enter Key' value={key} onChange={keyOnChange}></input>
-                    <button className='rounded-lg bg-lime-500 h-12 px-3 mt-1' onClick={dec}>{buttonName}</button>
+
+        <div className='w-full mt-2 '>
+                <div className='bg-orange-100 w-80 mx-16 h-fit text-center text-2xl rounded-2xl'>
+                    <p className=' p-4'>{message}</p>
+                    <div className='flex'>
+                        <input type="number" className='pb-2 w-36 my-3 mx-4' placeholder='Enter key'  value={key} onChange={keyOnChange}></input>
+                        <button className='rounded-lg bg-lime-500 h-12 px-3 mt-1' onClick={dec}>{buttonName}</button>
+                    </div>
                 </div>
             </div>
-        </div>
     )
 }
 
